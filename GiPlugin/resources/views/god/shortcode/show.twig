@@ -1,0 +1,170 @@
+</pre>
+            {% for god in one_god %}
+                <table>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <h1>{{ god.Name }}</h1>
+                            <p>{{ god.Pantheon }}</p>
+                            <p>{{ god.Title }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img height="300px" src="{{ god.godCard_URL  }}">
+                        </td>
+                        <td>
+                            <h1>{{ god.Type }}</h1>
+                            <h1>{{ god.Roles }}</h1>
+                            <p>{{ god.Pros }}</p>
+                            <p>Vie : {{ god.Health }} ({{ god.HealthPerLevel }})</p>
+                            <p>Régénération de vie : {{ god.HealthPerFive }} ({{ god.HP5PerLevel }})</p>
+                            <p>Mana : {{ god.Mana }} ({{ god.ManaPerLevel }})</p>
+                            <p>Regénération Mana : {{ god.ManaPerFive }} ({{ god.MP5PerLevel }})</p>
+                            <p>Puissance magique : {{ god.MagicalPower }} ({{ god.MagicalPowerPerLevel }})</p>
+                            <p>Puissance physique : {{ god.PhysicalPower }} ({{ god.PhysicalPowerPerLevel }})</p>
+                            <p>Vitesse d'attaque : {{ god.AttackSpeed }} ({{ god.AttackSpeedPerLevel }})</p>
+                            <p>Protection magique : {{ god.MagicProtection }} ({{ god.MagicProtectionPerLevel }})</p>
+                            <p>Protection physique : {{ god.PhysicalProtection }} ({{ god.PhysicalProtectionPerLevel }})</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h1>Description</h1>
+                            <p>{{ god.Lore|raw }}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <h1>Les sorts</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="{{ god.Ability_5.URL }}">
+                            <b>Passif</b> : {{ god.Ability_5.Summary }}
+                        </td>
+                        <td>
+                            <p>
+                                {{ god.Ability_5.Description.itemDescription.description }}
+                            </p>
+                            {% for skill in god.Ability_5.Description.itemDescription.menuitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                            {% for skill in god.Ability_5.Description.itemDescription.rankitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img src="{{ god.Ability_1.URL }}">
+                            <b>Sort 1 </b> : {{ god.Ability_1.Summary }}
+                        </td>
+                        <td>
+                            <p>
+                                {{ god.Ability_1.Description.itemDescription.description }}
+                            </p>
+                            Cooldown : {{ god.Ability_1.Description.itemDescription.cooldown }} <br>
+                            Coût : {{ god.Ability_1.Description.itemDescription.cost }} <br>
+                            {% for skill in god.Ability_1.Description.itemDescription.menuitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                            {% for skill in god.Ability_1.Description.itemDescription.rankitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img src="{{ god.Ability_2.URL }}">
+                            <b>Sort 2 </b> : {{ god.Ability_1.Summary }}
+                        </td>
+                        <td>
+                            <p>
+                                {{ god.Ability_2.Description.itemDescription.description }}
+                            </p>
+                            Cooldown : {{ god.Ability_2.Description.itemDescription.cooldown }} <br>
+                            Coût : {{ god.Ability_2.Description.itemDescription.cost }} <br>
+                            {% for skill in god.Ability_2.Description.itemDescription.menuitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                            {% for skill in god.Ability_2.Description.itemDescription.rankitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img src="{{ god.Ability_3.URL }}">
+                            <b>Sort 3 </b> : {{ god.Ability_3.Summary }}
+                        </td>
+                        <td>
+                            <p>
+                                {{ god.Ability_3.Description.itemDescription.description }}
+                            </p>
+                            Cooldown : {{ god.Ability_3.Description.itemDescription.cooldown }} <br>
+                            Coût : {{ god.Ability_3.Description.itemDescription.cost }} <br>
+                            {% for skill in god.Ability_3.Description.itemDescription.menuitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                            {% for skill in god.Ability_3.Description.itemDescription.rankitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                            <hr>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <img src="{{ god.Ability_4.URL }}">
+                            <b>Ultimate </b> : {{ god.Ability_1.Summary }}
+                        </td>
+                        <td>
+                            <p>
+                                {{ god.Ability_4.Description.itemDescription.description }}
+                            </p>
+                            Cooldown : {{ god.Ability_4.Description.itemDescription.cooldown }} <br>
+                            Coût : {{ god.Ability_4.Description.itemDescription.cost }} <br>
+                            {% for skill in god.Ability_4.Description.itemDescription.menuitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                            {% for skill in god.Ability_4.Description.itemDescription.rankitems %}
+                                {{ skill.description }}  {{ skill.value }} <br>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                </table>
+            {% else %}
+                Humm ce dieu est hors du champs de bataille :'(
+            {% endfor %}

@@ -1,0 +1,58 @@
+{{ header() }}
+<div id="full_page_wrapper">
+      <div class="header">
+          <h2>
+              Tous les dieux
+            </h2>
+      </div>
+      <div id="post_wrapper">
+        <!-- Body Start -->
+        <div id="body">
+          Pantheon :
+<select name="select_god_pantheon" id="select_god_pantheon">
+    <option selected="selected" value="">Pas de filtre</option>
+    <option value="Hindou">Hindou</option>
+    <option value="Maya">Maya</option>
+    <option value="Égyptien">Égyptien</option>
+    <option value="Chinois">Chinois</option>
+    <option value="Grec">Grec</option>
+    <option value="Romain">Romain</option>
+    <option value="Nordique">Nordique</option>
+    <option value="Japonais">Japonais</option>
+</select>
+Role :
+<select name="select_god_role" id="select_god_role">
+    <option selected="selected" value="">Pas de filtre</option>
+    <option value=" Mage">Mage</option>
+    <option value=" Chasseur">Chasseur</option>
+    <option value=" Assassin">Assassin</option>
+    <option value=" Gardien">Gardien</option>
+    <option value=" Guerrier">Guerrier</option>
+</select>
+
+<br>
+<br class='clear'>
+<div id="primary" style='display: inline-block;text-align: center; font-size:18px;'>
+    <main id="main" class="site-main" role="main">
+        {% for god in all_gods %}
+            <figure style="display: inline-block;" data-pantheon="{{ god.Pantheon }}" data-role="{{ god.Roles }}" >
+                <img class="img_smfr_god" alt="{{ god.Name }}" src="{{ god.godIcon_URL }}">
+                <a href="/gods/{{ god.Slug }}" >
+                    <figcaption>
+                        <h3 style="font-size:20px;">{{ god.Name }}<br><span style="color:grey; font-size:10px;" >{{ god.Pantheon }}</span></h3>
+                        <p>{{ god.Roles }}</p>
+                    </figcaption>
+                </a>
+            </figure>
+        {% else %}
+            Error
+        {% endfor %}
+    </main>
+</div>
+		  
+        </div><!-- Body end -->
+        <div class="clear"></div>
+      </div>
+    </div><!-- Full page wrapper end -->
+
+{{ footer() }}

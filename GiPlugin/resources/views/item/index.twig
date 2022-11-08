@@ -1,0 +1,32 @@
+{{ header() }}
+<div id="full_page_wrapper">
+      <div class="header">
+          <h2>
+              Liste des Items
+            </h2>
+      </div>
+      <div id="post_wrapper">
+        <!-- Body Start -->
+        <div id="body">
+				  <br class='clear'>
+		<div id="primary" style='display: inline-block;text-align: center; font-size:18px;'>
+			<main id="main" class="site-main" role="main">
+				{% for item in all_items %}
+					<figure style="display: inline-block;" data-pantheon="{{ item.DeviceName }}" data-role="{{ item.DeviceName }}" >
+						<img class="img_smfr_god" alt="{{ item.DeviceName }}" src="{{ item.itemIcon_URL }}">
+						<!--<a href="/items/{{ item.Slug }}" >-->
+							<figcaption>
+								<h3 style="font-size:20px;">{{ item.DeviceName }}<br><span style="color:grey; font-size:10px;" >{{ item.DeviceName }}</span></h3>
+							<!--</figcaption>-->
+						</a>
+					</figure>
+				{% else %}
+					Error
+				{% endfor %}
+			</main>
+		</div> 
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+{{ footer() }}
